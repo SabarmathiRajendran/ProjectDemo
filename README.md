@@ -6,4 +6,5 @@ Initializes a new Git repository in the current directory.
     - `mkdir my_project`
     - `cd my_project`
     - `git init`
+    
 Creates a new Git repository in my_project.
