@@ -53,46 +53,45 @@ Commits the staged changes with the message "Initial commit".
 
 **To commit and stage changes in one command:**
 
-- Command: git commit -am "<message>"
-- Example: git commit -am "Updated index.html"
+- Command: `git commit -am "<message>"`
+- Example: `git commit -am "Updated index.html"`
 
 Stages and commits all modified files with the message "Updated index.html".
 
 # 3. Branching
 ## 3.1 git branch
 **Lists Branches**
-- Command: git branch
-- Example: git branch
+- Command: `git branch`
+- Example: `git branch`
 
 Lists all branches in the repository.
 
 **Create a Branch**
-- Command: git branch <branch-name>
-- Example: git branch feature-branch
+- Command: `git branch <branch-name>`
+- Example: `git branch feature-branch`
 
 Creates a new branch named feature-branch.
 
 **Delete a Branch**
-- Command: git branch -d <branch-name>
-- Example: git branch -d feature-branch
+- Command: `git branch -d <branch-name>`
+- Example: `git branch -d feature-branch`
 
 Deletes the feature-branch.
 
 ## 3.2 git checkout
 **Creates a new branch and switches to it.**
-- Command: git checkout -b <new-branch>
-- Example: git checkout -b feature-branch
+- Command: `git checkout -b <new-branch>`
+- Example: `git checkout -b feature-branch`
 
 Creates and switches to feature-branch.
 
 **Switches to an existing branch.**
 
-- Command: git checkout <branch>
-- Example: git checkout main
+- Command: `git checkout <branch>`
+- Example: `git checkout main`
 
 Switches to main.
 
-- To create and switch to a new branch: `git checkout -b new-branch`
 
 # 4. Pushing and Pulling Changes
 ## 4.1 git push
@@ -104,7 +103,7 @@ Pushes the main branch to the origin remote.
 
 ## 4.2 git pull
 
-**Pull Request**
+**4.2.1 Pull Request**
 A request to merge changes from one branch (e.g., feature-branch) into another (e.g., main).
 
 Commonly used in collaborative projects for:
@@ -113,24 +112,51 @@ Commonly used in collaborative projects for:
 - Discussing changes with team members.
 - Tracking progress and issues.
 
-**Prerequisites**
+**4.2.2 Prerequisites**
 Ensure changes are committed and pushed to a remote branch.
-Example: git push origin feature-branch
+Example: `git push origin feature-branch`
 
-**Creating a Pull Request on GitHub**
-- Go to the Repository: Open your GitHub repository in a browser.
-- Navigate to Pull Requests: Click the Pull Requests tab.
-- Create New Pull Request:
+**4.2.3 Creating a Pull Request on GitHub**
+- **Go to the Repository:** Open your GitHub repository in a browser.
+- **Navigate to Pull Requests:** Click the Pull Requests tab.
+- **Create New Pull Request:**
     - Click New Pull Request.
     - Select:
         - Base branch: The branch you want to merge changes into (e.g., main).
         - Compare branch: The branch with your changes (e.g., feature-branch).
-- Review Changes: GitHub displays a comparison of the changes between branches.
-- Add Details:
+- **Review Changes:** GitHub displays a comparison of the changes between branches.
+- **Add Details:**
     - Enter a descriptive title and summary of the changes.
     - Optionally, link issues (e.g., Closes #123) or tag reviewers.
-- Submit the Pull Request:
-- Click Create Pull Request.
+- **Submit the Pull Request:** Click Create Pull Request.
+
+**4.2.4 Reviewing a Pull Request**
+A review has three possible statuses:
+
+- **Comment:** Submit general feedback without explicitly approving the changes or requesting additional changes.
+- **Approve:** Submit feedback and approve merging the changes proposed in the pull request.
+- **Request changes:** Submit feedback that must be addressed before the pull request can be merged.
+
+**4.2.5 Merging a Pull Request**
+- **Navigate to the Pull Request:**
+    - Go to the repository on GitHub.
+    - Click on the Pull Requests tab.
+    - Select the pull request you want to merge.
+- **Review the Changes:**
+    - Scroll through the Files changed tab to review the modifications.
+    - Use the Conversation tab to review comments, approvals, or any unresolved conflicts.
+- **Choose a Merge Option:**
+    - At the bottom of the pull request, you’ll see a Merge pull request button with a dropdown arrow next to it.
+    - Click the dropdown arrow to view the available options:
+        - **Create a merge commit:** Default option, merges with a merge commit.
+        - **Squash and merge:** Combines all commits into one before merging.
+        - **Rebase and merge:** Rebases commits from the branch onto the base branch without a merge commit.
+- **Select and Confirm the Merge Option:**
+    - Choose the desired merge option.
+    - If necessary, edit the commit message (e.g., for squashing).
+    - Click Confirm merge to complete the process.
+- **Verify the Merge:**
+    - Go to the Commits or Code tab of the repository to confirm that the changes were merged.
 
 # 5. Viewing History
 ## 5.1 git log
@@ -143,15 +169,15 @@ Shows a condensed log of commits.
 ## 5.2 git diff
 Displays changes between the working directory and the staging area.
 
-- Command: git diff
-- Example: git diff
+- Command: `git diff`
+- Example: `git diff`
 
 Shows modifications not yet staged for commit.
 
 ## 5.2 git diff HEAD
 Displays changes between the working directory and the latest commit.
 
-- Command: git diff HEAD
-- Example: git diff HEAD
+- Command: `git diff HEAD`
+- Example: `git diff HEAD`
 
 Shows all changes made since the last commit.
